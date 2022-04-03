@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+export LandingPage from "./LandingPage";
+import QuizPage from "./QuizPage";
 
-function App() {
+export default function App() {
+  const [currentPage, setCurrentPage] = React.useState("landing")
+  const [quizDataJSON, setQuizDataJSON] = React.useState([])
+
+  React.useEffect(() => {
+    fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+        .then(res => res.json())
+        .then(json => setQuizDataJSON(json.results))
+  }, [])
+
+  function startQuiz() {
+    setCurrentPage("quiz")
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <main>
+        {currentPage === "landing" && (
+            <LandingPage startQuiz={() => startQuiz()}/>
+        )}
+        {currentPage === "quiz" && <QuizPage quizDataJSON={quizDataJSON}/>}
+      </main>
   );
 }
-
-export default App;
