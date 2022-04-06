@@ -21,6 +21,7 @@ export default function QuizPage({restart}) {
                 setLoading(false)
             }
         }
+
         fetchData()
     }, [])
 
@@ -49,7 +50,7 @@ export default function QuizPage({restart}) {
     if (loading) return <h2>Loading...</h2>
 
     return (
-        <>
+        <main className="quiz-page">
             {quizBlocks}
             <footer>
                 {!showAnswers ?
@@ -61,6 +62,6 @@ export default function QuizPage({restart}) {
                     </>
                 }
             </footer>
-        </>
+        </main>
     )
 }
