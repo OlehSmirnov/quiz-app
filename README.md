@@ -1,21 +1,18 @@
-# quiz-app
+# Quiz app
 
-**Overview:**
+### A game in which user have to answer questions that are generated using [Open Trivia API](https://opentdb.com/api_config.php).
 
-An app in which user have to answer to 5 questions that are generated using [Open Trivia API](https://opentdb.com/api_config.php).
+**Gameplay overview:**
 
-After clicking "Start quiz" button user gets random questions and able to select only 1 answer in each section.
-After clicking "Check answers" button user is able to see the correct answers. 
-After that user is prompted to start over by clicking "Play again" button
+1. Before a quiz user can select number of questions, category and difficulty of them
+2. If there are no errors fetching data from the server the quiz starts, otherwise the error is shown
+3. After quiz starts user can select only 1 answer for each question 
+and is able to change it before checking answers
+4. After clicking "Check answers" button the answers and scores are shown to user in a nice visual format 
+5. After that user is prompted to start over by clicking "Play again" button.
 
-**Technical difficulties:**
+**Tech stack:**
 
-As it was my first React.js project that I had to do completely from scratch there were a number of technical difficulties 
-that I had to overcome in order to implement a viable solution. By trial and error I built everything step by step and overcome all the difficulties in the process.
-
-By far the most confusing and trickiest parts were:
-* Building up necessary components logic and interaction using props and callbacks
-* Mixing up a correct answer with incorrect ones
-* Applying necessary styles and count correct answers after clicking "Check answers" button
+* React + JavaScript
 
 [Live version](https://oleh-quiz-app.netlify.app/)
