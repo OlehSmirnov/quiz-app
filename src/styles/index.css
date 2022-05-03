@@ -27,12 +27,28 @@ section {
     border-bottom: 1px solid #DBDEF0;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    gap: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+form input, form select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #9a9a9a;
+    font-size: 1.1rem;
+}
+
 .answers_container {
     display: flex;
     gap: 20px;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -51,8 +67,7 @@ section {
 .answer {
     border-radius: 15px;
     padding: 15px;
-    min-width: 10px;
-    height: 50%;
+    flex: 1;
     border: 1px solid #4D5B9E;
     cursor: pointer;
 }
@@ -64,6 +79,7 @@ button {
     font-family: Inter, sans-serif;
     border: none;
     color: white;
+    align-self: center;
     cursor: pointer;
     box-sizing: border-box;
     background-color: #4D5B9E;
@@ -79,7 +95,7 @@ footer {
     gap: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
     .answers_container {
         flex-direction: column;
         align-self: center;
